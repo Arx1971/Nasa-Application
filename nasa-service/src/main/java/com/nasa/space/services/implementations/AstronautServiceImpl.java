@@ -7,11 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class AstronautServiceImpl implements AstronautService {
 
-    private AstronautRepository astronautRepository;
+    private final AstronautRepository astronautRepository;
 
     @Autowired
     public AstronautServiceImpl(AstronautRepository astronautRepository) {
@@ -25,7 +26,8 @@ public class AstronautServiceImpl implements AstronautService {
 
     @Override
     public Astronaut findById(Long id) {
-        return null;
+        return astronautRepository.findById(id).orElseThrow(() ->
+                new NoSuchElementException(String.format("User Id: %s Does not exist.", id)));
     }
 
     @Override
