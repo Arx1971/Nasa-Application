@@ -33,7 +33,7 @@ public class AstronautController {
                 new ResponseEntity<>(astronaut, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/save")
+    @RequestMapping(method = RequestMethod.POST, path = "/save")
     public ResponseEntity<?> saveAstronaut(@RequestBody Astronaut astronaut) {
         return ResponseEntity.ok(astronautService.save(astronaut));
     }

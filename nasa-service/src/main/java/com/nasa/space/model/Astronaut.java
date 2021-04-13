@@ -10,7 +10,7 @@ public class Astronaut {
 
     @Id
     @Column(name = "astronaut_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "astronaut_fname")
