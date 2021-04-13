@@ -26,8 +26,7 @@ public class AstronautServiceImpl implements AstronautService {
 
     @Override
     public Astronaut findById(Long id) {
-        return astronautRepository.findById(id).orElseThrow(() ->
-                new NoSuchElementException(String.format("User Id: %s Does not exist.", id)));
+        return astronautRepository.findById(id).orElse(null);
     }
 
     @Override
