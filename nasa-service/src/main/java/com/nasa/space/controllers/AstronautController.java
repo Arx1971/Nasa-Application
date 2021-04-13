@@ -33,4 +33,9 @@ public class AstronautController {
                 new ResponseEntity<>(astronaut, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/save")
+    public ResponseEntity<?> saveAstronaut(@RequestBody Astronaut astronaut) {
+        return ResponseEntity.ok(astronautService.save(astronaut));
+    }
+
 }

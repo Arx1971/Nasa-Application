@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 public class AstronautServiceImpl implements AstronautService {
@@ -30,8 +29,9 @@ public class AstronautServiceImpl implements AstronautService {
     }
 
     @Override
-    public Astronaut Save(Astronaut astronaut) {
-        return null;
+    public Astronaut save(Astronaut astronaut) {
+        astronaut.setId(0L);
+        return astronautRepository.save(astronaut);
     }
 
     @Override

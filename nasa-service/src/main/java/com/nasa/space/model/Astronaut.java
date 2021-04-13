@@ -1,10 +1,7 @@
 package com.nasa.space.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -12,7 +9,8 @@ import java.util.Date;
 public class Astronaut {
 
     @Id
-    @Column(name = "astronaut_id")
+    @Column(name = "astronaut_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "astronaut_fname")

@@ -10,7 +10,7 @@ public interface AstronautService {
 
     Astronaut findById(Long id);
 
-    Astronaut Save(Astronaut astronaut);
+    Astronaut save(Astronaut astronaut);
 
     void delete(Astronaut astronaut);
 
