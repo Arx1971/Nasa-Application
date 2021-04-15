@@ -1,6 +1,5 @@
 package com.nasa.space.model;
 
-
 import javax.persistence.*;
 import java.util.Date;
 
