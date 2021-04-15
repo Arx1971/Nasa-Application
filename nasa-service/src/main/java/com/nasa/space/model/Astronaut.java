@@ -2,6 +2,7 @@ package com.nasa.space.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "astronaut_info")
@@ -86,5 +87,23 @@ public class Astronaut {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Astronaut)) return false;
+        Astronaut astronaut = (Astronaut) o;
+        return id.equals(astronaut.id) &&
+                firstName.equals(astronaut.firstName) &&
+                lastName.equals(astronaut.lastName) &&
+                dob.equals(astronaut.dob) &&
+                Objects.equals(country, astronaut.country) &&
+                Objects.equals(gender, astronaut.gender);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, dob, country, gender);
     }
 }
