@@ -11,6 +11,7 @@
 
     <modules>
         <module>nasa-service</module>
+        <module>nasa-UI</module>
     </modules>
 
     <groupId>com.nasa.app</groupId>
@@ -66,13 +67,21 @@
         </dependency>
     </dependencies>
 
-    <build>
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>

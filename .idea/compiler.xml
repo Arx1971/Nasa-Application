@@ -7,16 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="nasa-service" />
+        <module name="nasa-UI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Nasa-Application" target="11" />
       <module name="nasa-service" target="11" />
+      <module name="nasa-UI" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Nasa-Application" options="-parameters" />
+      <module name="nasa-UI" options="-parameters" />
       <module name="nasa-service" options="-parameters" />
     </option>
   </component>

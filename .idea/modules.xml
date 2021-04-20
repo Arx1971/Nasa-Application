@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Nasa-Application.iml" filepath="$PROJECT_DIR$/Nasa-Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nasa-UI/nasa-UI.iml" filepath="$PROJECT_DIR$/nasa-UI/nasa-UI.iml" />
       <module fileurl="file://$PROJECT_DIR$/nasa-service/nasa-service.iml" filepath="$PROJECT_DIR$/nasa-service/nasa-service.iml" />
     </modules>
   </component>
