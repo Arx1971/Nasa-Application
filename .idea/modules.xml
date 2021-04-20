@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Nasa-Application.iml" filepath="$PROJECT_DIR$/.idea/Nasa-Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nasa-Application.iml" filepath="$PROJECT_DIR$/Nasa-Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/nasa-service/nasa-service.iml" filepath="$PROJECT_DIR$/nasa-service/nasa-service.iml" />
     </modules>
   </component>

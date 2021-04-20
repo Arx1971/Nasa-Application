@@ -1,4 +1,4 @@
-package com.nasa.space;
+package com.nasa.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
