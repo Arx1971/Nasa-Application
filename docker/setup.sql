@@ -1,7 +1,5 @@
-CREATE
-DATABASE IF NOT EXISTS `nasa_space_exploration_database`;
-USE
-`nasa_space_exploration_database`;
+CREATE DATABASE IF NOT EXISTS `nasa_space_exploration_database`;
+USE `nasa_space_exploration_database`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE users
