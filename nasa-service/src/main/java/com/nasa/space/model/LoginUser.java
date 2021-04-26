@@ -1,6 +1,13 @@
 package com.nasa.space.model;
 
-public class LoginUser {
+import java.io.Serializable;
+
+public class LoginUser implements Serializable {
+
+    private static final long serialVersionUID = 5926468583005150707L;
+
+    public LoginUser() {
+    }
 
     private String username;
     private String password;
