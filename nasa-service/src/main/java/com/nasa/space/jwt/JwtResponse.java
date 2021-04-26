@@ -1,4 +1,4 @@
-package com.nasa.space.model;
+package com.nasa.space.jwt;
 
 import java.io.Serializable;
 

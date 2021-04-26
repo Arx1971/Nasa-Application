@@ -1,4 +1,4 @@
-package com.nasa.space.services;
+package com.nasa.space.jwt;
 
 import com.nasa.space.model.User;
 import com.nasa.space.repositories.UserRepository;

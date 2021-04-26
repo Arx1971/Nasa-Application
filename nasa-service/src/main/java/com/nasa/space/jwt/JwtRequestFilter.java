@@ -1,6 +1,5 @@
 package com.nasa.space.jwt;
 
-import com.nasa.space.services.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
