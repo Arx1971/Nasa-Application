@@ -6,19 +6,16 @@ CREATE TABLE users
 (
     `users_id` INT         NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(30) NOT NULL,
-    `password` VARCHAR(60) NOT NULL,
+    `password` VARCHAR(256) NOT NULL,
     PRIMARY KEY (`users_id`)
 );
 
 LOCK
 TABLES `users` WRITE;
 INSERT INTO `users` (`users_id`, `username`, `password`)
-VALUES (1, 'Joseph', ''),
-       (2, 'Loren', ''),
-       (3, 'Mike', ''),
-       (4, 'Viktor', ''),
-       (5, 'Aleksandr', ''),
-       (6, 'Sally', '');
+VALUES (1, 'joseph', '$2y$12$pjxbaMXKh0o.22b9ye1TP.1qC9i.gcgDR.kAhvA5C.GKgD1j48vjq'),
+       (2, 'loren', '$2y$12$xAVWv.TCNn5Ek.JRaED6E.YV3MtuMtWXpEI0VGtkjf0pSyLvdLubK'),
+       (3, 'sally', '$2y$12$k1f7VuWnyd52/xS7qw1PHO3NAq3.sk2mR3BmGcq9zlxgrgmZjUb2S');
 UNLOCK
 TABLES;
 
