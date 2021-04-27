@@ -5,13 +5,16 @@ import net.minidev.json.annotate.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users", schema = "nasa_space_exploration_database")
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "users_id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long id;
+
+    @Column(name = "email", nullable = false)
+    private String email;
 
     @Column(name = "username", nullable = false)
     private String username;

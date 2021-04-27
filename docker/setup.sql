@@ -1,23 +1,65 @@
 CREATE DATABASE IF NOT EXISTS `nasa_space_exploration_database`;
 USE `nasa_space_exploration_database`;
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE users
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE user
 (
-    `users_id` INT         NOT NULL AUTO_INCREMENT,
-    `username` VARCHAR(30) NOT NULL,
+    `user_id` INT          NOT NULL AUTO_INCREMENT,
+    `email`    VARCHAR(100) NOT NULL,
+    `username` VARCHAR(30)  NOT NULL,
     `password` VARCHAR(256) NOT NULL,
-    PRIMARY KEY (`users_id`)
+    PRIMARY KEY (`user_id`)
 );
 
 LOCK
-TABLES `users` WRITE;
-INSERT INTO `users` (`users_id`, `username`, `password`)
-VALUES (1, 'joseph', '$2y$12$pjxbaMXKh0o.22b9ye1TP.1qC9i.gcgDR.kAhvA5C.GKgD1j48vjq'),
-       (2, 'loren', '$2y$12$xAVWv.TCNn5Ek.JRaED6E.YV3MtuMtWXpEI0VGtkjf0pSyLvdLubK'),
-       (3, 'sally', '$2y$12$k1f7VuWnyd52/xS7qw1PHO3NAq3.sk2mR3BmGcq9zlxgrgmZjUb2S');
+TABLES `user` WRITE;
+INSERT INTO `user` (`user_id`, `username`, `email`, `password`)
+VALUES (1, 'joseph', 'joseph@email.com', '$2y$12$pjxbaMXKh0o.22b9ye1TP.1qC9i.gcgDR.kAhvA5C.GKgD1j48vjq'),
+       (2, 'loren', 'loren@email.com', '$2y$12$xAVWv.TCNn5Ek.JRaED6E.YV3MtuMtWXpEI0VGtkjf0pSyLvdLubK'),
+       (3, 'sally', 'sally@email.com', '$2y$12$k1f7VuWnyd52/xS7qw1PHO3NAq3.sk2mR3BmGcq9zlxgrgmZjUb2S');
 UNLOCK
 TABLES;
+
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE role
+(
+    `role_id` INT          NOT NULL AUTO_INCREMENT,
+    `name`     VARCHAR(100) NOT NULL,
+    PRIMARY KEY (`role_id`)
+);
+
+LOCK
+TABLES `role` WRITE;
+INSERT INTO `role` (`role_id`, `name`)
+VALUES (1, 'ROLE_USER'),
+       (2, 'ROLE_MODERATOR'),
+       (3, 'ROLE_ADMIN');
+UNLOCK
+TABLES;
+
+
+DROP TABLE IF EXISTS `user_roles`;
+CREATE TABLE `user_roles`
+(
+    `user_id` int NOT NULL,
+    `role_id` int NOT NULL,
+    PRIMARY KEY (`user_id`, `role_id`),
+    CONSTRAINT `fk_user_roles_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT `fk_user_roles_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+
+LOCK
+TABLES `user_roles` WRITE;
+INSERT INTO `user_roles` (`user_id`, `role_id`)
+VALUES (1, 1),
+       (1, 2),
+       (1, 3),
+       (2, 3),
+       (3, 3);
+UNLOCK
+TABLES;
+
 
 DROP TABLE IF EXISTS `astronaut_info`;
 CREATE TABLE `astronaut_info`
