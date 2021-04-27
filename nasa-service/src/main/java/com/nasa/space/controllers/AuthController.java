@@ -1,9 +1,6 @@
 package com.nasa.space.controllers;
 
-import com.nasa.space.jwt.JwtTokenUtil;
-import com.nasa.space.jwt.JwtResponse;
 import com.nasa.space.model.LoginUser;
-import com.nasa.space.jwt.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
