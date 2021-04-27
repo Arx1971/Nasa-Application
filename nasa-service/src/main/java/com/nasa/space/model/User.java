@@ -1,7 +1,5 @@
 package com.nasa.space.model;
 
-import net.minidev.json.annotate.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,7 +24,6 @@ public class User {
     private String username;
 
     @Column(name = "password", nullable = false)
-    @JsonIgnore
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)

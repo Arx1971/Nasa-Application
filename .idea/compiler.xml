@@ -10,7 +10,7 @@
         <module name="nasa-UI" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11">
       <module name="Nasa-Application" target="11" />
       <module name="nasa-service" target="11" />
       <module name="nasa-UI" target="11" />
