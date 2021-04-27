@@ -1,8 +1,8 @@
 CREATE DATABASE IF NOT EXISTS `nasa_space_exploration_database`;
 USE `nasa_space_exploration_database`;
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE user
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE users
 (
     `user_id` INT          NOT NULL AUTO_INCREMENT,
     `email`    VARCHAR(100) NOT NULL,
@@ -12,16 +12,16 @@ CREATE TABLE user
 );
 
 LOCK
-TABLES `user` WRITE;
-INSERT INTO `user` (`user_id`, `username`, `email`, `password`)
+TABLES `users` WRITE;
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`)
 VALUES (1, 'joseph', 'joseph@email.com', '$2y$12$pjxbaMXKh0o.22b9ye1TP.1qC9i.gcgDR.kAhvA5C.GKgD1j48vjq'),
        (2, 'loren', 'loren@email.com', '$2y$12$xAVWv.TCNn5Ek.JRaED6E.YV3MtuMtWXpEI0VGtkjf0pSyLvdLubK'),
        (3, 'sally', 'sally@email.com', '$2y$12$k1f7VuWnyd52/xS7qw1PHO3NAq3.sk2mR3BmGcq9zlxgrgmZjUb2S');
 UNLOCK
 TABLES;
 
-DROP TABLE IF EXISTS `role`;
-CREATE TABLE role
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE roles
 (
     `role_id` INT          NOT NULL AUTO_INCREMENT,
     `name`     VARCHAR(100) NOT NULL,
@@ -29,8 +29,8 @@ CREATE TABLE role
 );
 
 LOCK
-TABLES `role` WRITE;
-INSERT INTO `role` (`role_id`, `name`)
+TABLES `roles` WRITE;
+INSERT INTO `roles` (`role_id`, `name`)
 VALUES (1, 'ROLE_USER'),
        (2, 'ROLE_MODERATOR'),
        (3, 'ROLE_ADMIN');
@@ -44,8 +44,8 @@ CREATE TABLE `user_roles`
     `user_id` int NOT NULL,
     `role_id` int NOT NULL,
     PRIMARY KEY (`user_id`, `role_id`),
-    CONSTRAINT `fk_user_roles_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT `fk_user_roles_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT `fk_user_roles_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT `fk_user_roles_role` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 
