@@ -14,7 +14,7 @@ CREATE TABLE users
 LOCK
 TABLES `users` WRITE;
 INSERT INTO `users` (`user_id`, `username`, `email`, `password`)
-VALUES (1, 'joseph', 'joseph@email.com', '$2y$12$pjxbaMXKh0o.22b9ye1TP.1qC9i.gcgDR.kAhvA5C.GKgD1j48vjq'),
+VALUES (1, 'joseph', 'joseph@email.com', '8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8'),
        (2, 'loren', 'loren@email.com', '$2y$12$xAVWv.TCNn5Ek.JRaED6E.YV3MtuMtWXpEI0VGtkjf0pSyLvdLubK'),
        (3, 'sally', 'sally@email.com', '$2y$12$k1f7VuWnyd52/xS7qw1PHO3NAq3.sk2mR3BmGcq9zlxgrgmZjUb2S');
 UNLOCK
