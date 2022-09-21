@@ -2,6 +2,8 @@ package com.nasa.space.controllers;
 
 import com.nasa.space.model.Astronaut;
 import com.nasa.space.services.AstronautService;
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,8 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/api/astronaut")
 public class AstronautController {
+
+    private static final Logger logger = LoggerFactory.getLogger(AstronautController.class);
 
     private final AstronautService astronautService;
 
