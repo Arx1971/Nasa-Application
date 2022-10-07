@@ -16,7 +16,7 @@
 
     <groupId>com.nasa.app</groupId>
     <artifactId>nasa-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>Nasa-Application</name>
     <description>Demo project for Spring Boot</description>
     <properties>
